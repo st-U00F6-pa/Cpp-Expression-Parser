@@ -6,10 +6,10 @@ enum PostfixTokenType { Number, BinaryOp, UnaryOp};
 class PostfixToken {
 public:
 	PostfixTokenType type;
-	float number;
+	double number;
 	OperatorType oper;
 
 	PostfixToken(PostfixTokenType type, OperatorType oper);
 
-	PostfixToken(PostfixTokenType type, float number);
+	PostfixToken(PostfixTokenType type, double number);
 };

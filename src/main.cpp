@@ -19,7 +19,7 @@ int main() {
 
         postfix_tokens = convert_expression(infix_tokens);
 
-        float result = evaluate_expression(postfix_tokens);
+        double result = evaluate_expression(postfix_tokens);
 
         std::cout << result;
         std::cout << std::endl;
@@ -42,7 +42,7 @@ std::vector<InfixToken>* read_expression(char* expression) {
         InfixToken* token;
 
         if (state == InfixTokenType::Float || state == InfixTokenType::Integer) {
-            float number = std::stof(token_string);
+            double number = std::stof(token_string);
             token = new InfixToken(state, number);
         }
         else if (state == InfixTokenType::LeftParenthesis || state == InfixTokenType::RightParenthesis) {
@@ -282,9 +282,9 @@ std::vector<PostfixToken>* convert_expression(std::vector<InfixToken>* expressio
 
     return postfix_tokens;
 }
-float evaluate_expression(std::vector<PostfixToken>* expression) {
+double evaluate_expression(std::vector<PostfixToken>* expression) {
     
-    std::stack<float> stack;
+    std::stack<double> stack;
 
     for (int i = 0; i < expression->size(); i++) {
         PostfixToken token = (*expression)[i];
@@ -294,7 +294,7 @@ float evaluate_expression(std::vector<PostfixToken>* expression) {
         }
         else if (token.type == PostfixTokenType::UnaryOp) {
 
-            float a = stack.top(); stack.pop();
+            double a = stack.top(); stack.pop();
 
             switch (token.oper) {
                 case OperatorType::Subtract: 
@@ -306,10 +306,10 @@ float evaluate_expression(std::vector<PostfixToken>* expression) {
         }
         else if (token.type == PostfixTokenType::BinaryOp) {
 
-            float b = stack.top(); stack.pop();
-            float a = stack.top(); stack.pop();
+            double b = stack.top(); stack.pop();
+            double a = stack.top(); stack.pop();
 
-            float result;
+            double result;
 
             switch (token.oper) {
                 case OperatorType::Add:

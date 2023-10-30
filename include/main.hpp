@@ -15,5 +15,5 @@ int main();
 
 std::vector<InfixToken>* read_expression(char* expression);
 std::vector<PostfixToken>* convert_expression(std::vector<InfixToken>* expression);
-float evaluate_expression(std::vector<PostfixToken>* expression);
+double evaluate_expression(std::vector<PostfixToken>* expression);
 bool isoper(char c);

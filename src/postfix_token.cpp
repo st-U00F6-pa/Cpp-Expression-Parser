@@ -5,7 +5,7 @@ PostfixToken::PostfixToken(PostfixTokenType type, OperatorType oper) {
 	this->oper = oper;
 	this->number = 0.0f;
 }
-PostfixToken::PostfixToken(PostfixTokenType type, float number) {
+PostfixToken::PostfixToken(PostfixTokenType type, double number) {
 	this->type = type;
 	this->oper = OperatorType::Undefined;
 	this->number = number;

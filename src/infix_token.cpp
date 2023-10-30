@@ -5,7 +5,7 @@ InfixToken::InfixToken(InfixTokenType type, OperatorType oper) {
 	this->oper = oper;
 	this->number = 0.0f;
 }
-InfixToken::InfixToken(InfixTokenType type, float number) {
+InfixToken::InfixToken(InfixTokenType type, double number) {
 	this->type = type;
 	this->oper = OperatorType::Undefined;
 	this->number = number;

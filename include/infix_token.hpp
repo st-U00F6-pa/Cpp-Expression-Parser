@@ -6,12 +6,12 @@ enum InfixTokenType { Unknown, Integer, Float, Infix, Prefix, LeftParenthesis, R
 class InfixToken {
 public:
 	InfixTokenType type;
-	float number;
+	double number;
 	OperatorType oper;
 
 	InfixToken(InfixTokenType type, OperatorType oper);
 
-	InfixToken(InfixTokenType type, float number);
+	InfixToken(InfixTokenType type, double number);
 
 	InfixToken(InfixTokenType type);
 
